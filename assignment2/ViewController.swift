@@ -94,7 +94,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         runMe = false
                     }
                 }
-                if ((firstCharValue == "d" || firstCharValue == "o" || firstCharValue == "t" ) && (secondCharValue  == ":") && runMe){
+                if ((firstCharValue == "d" || firstCharValue == "o" || firstCharValue == "t" ) && (secondCharValue  == ":") && !runMe){
                     //get the number of charecters inputed
                     //from that, caluclate the number of digits in the inputed number
                     let numOfChars = textArray.count
@@ -131,7 +131,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 }
             }
             //if it was none of those senarios then its invalid input and display the error messege
-            if (!runMe){
+            if (runMe){
                 textField.text = "ERROR"
                 textField.backgroundColor = UIColor.redColor()
             }
@@ -181,7 +181,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         runMe = false
                     }
                 }
-                if ((firstCharValue == "d" || firstCharValue == "o" || firstCharValue == "t" ) && (secondCharValue  == ":") && runMe){
+                if ((firstCharValue == "d" || firstCharValue == "o" || firstCharValue == "t" ) && (secondCharValue  == ":") && !runMe){
                     //get the number of charecters inputed
                     //from that, caluclate the number of digits in the inputed number
                     let numOfChars = textArray.count
@@ -221,7 +221,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 }
             }
             //otherwise some sort of error
-            if (!runMe) {
+            if (runMe) {
                 textField.text = "ERROR"
                 textField.backgroundColor = UIColor.redColor()
             }
@@ -273,7 +273,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         runMe = false
                     }
                 }
-                if((firstCharValue == "d" || firstCharValue == "o" || firstCharValue == "t" ) && (secondCharValue  == ":") && runMe){
+                if((firstCharValue == "d" || firstCharValue == "o" || firstCharValue == "t" ) && (secondCharValue  == ":") && !runMe){
                     //get the number of charecters inputed
                     //from that, caluclate the number of digits in the inputed number
                     let numOfChars = textArray.count
@@ -314,7 +314,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 }
             }
             //some other invalid senario, display the error messege
-            if (!runMe) {
+            if (runMe) {
                 textField.text = "ERROR"
                 textField.backgroundColor = UIColor.redColor()
             }
