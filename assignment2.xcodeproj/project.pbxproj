@@ -14,6 +14,7 @@
 		227873A01C84E5EE0016DFD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2278739E1C84E5EE0016DFD6 /* LaunchScreen.storyboard */; };
 		227873AB1C84E5EE0016DFD6 /* assignment2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227873AA1C84E5EE0016DFD6 /* assignment2Tests.swift */; };
 		227873B61C84E5EE0016DFD6 /* assignment2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227873B51C84E5EE0016DFD6 /* assignment2UITests.swift */; };
+		227DA3201CA0B353004552DA /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 227DA31F1CA0B353004552DA /* Media.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		227873B11C84E5EE0016DFD6 /* assignment2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = assignment2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		227873B51C84E5EE0016DFD6 /* assignment2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = assignment2UITests.swift; sourceTree = "<group>"; };
 		227873B71C84E5EE0016DFD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		227DA31F1CA0B353004552DA /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				227873951C84E5EE0016DFD6 /* AppDelegate.swift */,
 				227873971C84E5EE0016DFD6 /* ViewController.swift */,
+				227DA31F1CA0B353004552DA /* Media.xcassets */,
 				227873991C84E5EE0016DFD6 /* Main.storyboard */,
 				2278739C1C84E5EE0016DFD6 /* Assets.xcassets */,
 				2278739E1C84E5EE0016DFD6 /* LaunchScreen.storyboard */,
@@ -232,6 +235,7 @@
 			files = (
 				227873A01C84E5EE0016DFD6 /* LaunchScreen.storyboard in Resources */,
 				2278739D1C84E5EE0016DFD6 /* Assets.xcassets in Resources */,
+				227DA3201CA0B353004552DA /* Media.xcassets in Resources */,
 				2278739B1C84E5EE0016DFD6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +404,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = assignment2/Info.plist;
@@ -417,6 +422,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = assignment2/Info.plist;

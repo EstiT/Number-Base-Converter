@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController, UITextFieldDelegate {
     
     //Make IB Oustlet variables for the decimal, ternary, and octal buttons and for the text feild
@@ -15,62 +16,82 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var ternaryButton : UIButton!
     @IBOutlet var octalButton : UIButton!
     @IBOutlet var textField: UITextField!
+    let white = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+    let blue = UIColor(hue: 0.59, saturation: 0.65, brightness: 1, alpha: 1)
+    let lightGrey = UIColor(hue: 0, saturation: 0, brightness: 0.87, alpha: 1)
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //make the 3 buttons red with rounded corners
+        //make the 3 buttons white with rounded corners
         let layer = decimalButton.layer
         layer.cornerRadius = 7.0
         layer.masksToBounds = true
         layer.borderWidth = 0.8
-        decimalButton.backgroundColor = UIColor.redColor()
+        decimalButton.backgroundColor = white
+        decimalButton.setTitleColor(blue, forState: UIControlState.Normal)
+        decimalButton.setTitleColor(white, forState: UIControlState.Highlighted)
         
         let layer2 = ternaryButton.layer
         layer2.cornerRadius = 7.0
         layer2.masksToBounds = true
         layer2.borderWidth = 0.8
-        ternaryButton.backgroundColor = UIColor.redColor()
+        ternaryButton.backgroundColor = white
+        ternaryButton.setTitleColor(blue, forState: UIControlState.Normal)
+        ternaryButton.setTitleColor(white, forState: UIControlState.Highlighted)
         
         let layer3 = octalButton.layer
         layer3.cornerRadius = 7.0
         layer3.masksToBounds = true
         layer3.borderWidth = 0.8
-        octalButton.backgroundColor = UIColor.redColor()
+        octalButton.backgroundColor = white
+        octalButton.setTitleColor(blue, forState: UIControlState.Normal)
+        octalButton.setTitleColor(white, forState: UIControlState.Highlighted)
         
-        //set background colour to be grey
-        self.view.backgroundColor = UIColor.lightGrayColor()
+        //set background colour to be blue
+        self.view.backgroundColor = lightGrey
         //set the text field
         textField.delegate = self
+        
+        textField.font = UIFont(name: textField.font!.fontName, size: 12)
+        textField.text = "Enter a number to convert"
     }
+    func textFieldDidBeginEditing(textField: UITextField) {
+        textField.text = ""
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     @IBAction func decimalButtonClicked(sender : AnyObject) {
+         
+        /*
         //if the decimal button is clicked
         //check if the other buttons are green
         //if they are, change them back to red
         if (ternaryButton.backgroundColor == UIColor.greenColor() || octalButton.backgroundColor == UIColor.greenColor()){
-            ternaryButton.backgroundColor = UIColor.redColor()
-            octalButton.backgroundColor = UIColor.redColor()
+            ternaryButton.backgroundColor = white
+            octalButton.backgroundColor = white
         }
         //change this button to green
         decimalButton.backgroundColor = UIColor.greenColor()
+        */
         //get the text string that the user inputed
         let text = String(textField.text!)
-        
+
         //if there is nothing in the text field then display error messege
         if (text.isEmpty){
             textField.text = "ERROR"
-            textField.backgroundColor = UIColor.redColor()
+            textField.backgroundColor = white
         }
         
         //if the user did not enter the right number of charecters (there needs to be it least 3)
         //then display the error messege
         if(text.characters.count<3) {
             textField.text = "ERROR"
-            textField.backgroundColor = UIColor.redColor()
+            textField.backgroundColor = white
         }
         //there are itleast three characters inputed
         else{
@@ -84,7 +105,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //if the first charecter is not either o or d or t or the second charecter is not : then display the error messege
             if (!((firstCharValue == "d" || firstCharValue == "o" || firstCharValue == "t" ) && (secondCharValue  == ":"))){
                 textField.text = "ERROR"
-                textField.backgroundColor = UIColor.redColor()
+                textField.backgroundColor = white
             }
             //check if all the character  are numbers and not a letter or symbol
             //change each charecter to its ascii value and make sure its within the correct range
@@ -110,21 +131,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     // if user entered a decimal number and wants a decimal number
                     if(firstCharValue == "d"){
                         //then output the same number that they entered
-                        textField.text = String(number)
+                        textField.text = "d:" + String(number)
                     }
                     //if the user entered an octal number to be converted to decimal
                     else if(firstCharValue == "o"){
                         //convert the octal number to a decimal integer and then to a string
                         //output the string
                         let output = String(octalToDecimal(number))
-                        textField.text = output
+                        textField.text = "d:" + output
                     }
                     //the user entered a ternary nubmer to be converted to decimal
                     else if (firstCharValue == "t"){
                         //convert the ternary number to a decimal integer and then to a string
                         //output the string
                         let output = String(ternaryToDecimal(number))
-                        textField.text = output
+                        textField.text = "d:" + output
                     }
                     //set the text feild back to white (if it had changed to red)
                     textField.backgroundColor = UIColor.whiteColor()
@@ -133,33 +154,36 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //if it was none of those senarios then its invalid input and display the error messege
             if (runMe){
                 textField.text = "ERROR"
-                textField.backgroundColor = UIColor.redColor()
+                textField.backgroundColor = white
             }
         }
     }
     
     @IBAction func ternaryButtonClicked(sender : AnyObject) {
+         
+        /*
         //if the user clicked the ternary button
         //check if the other buttons are green
         //if they are, change them back to red
         if (decimalButton.backgroundColor == UIColor.greenColor() || octalButton.backgroundColor == UIColor.greenColor()){
-            decimalButton.backgroundColor = UIColor.redColor()
-            octalButton.backgroundColor = UIColor.redColor()
+            decimalButton.backgroundColor = white
+            octalButton.backgroundColor = white
         }
         //change this button to green
         ternaryButton.backgroundColor = UIColor.greenColor()
+        */
         //get the String of the input
         let text = String(textField.text!)
         
         //if th euser did not type anything then display the error messege
         if (text.isEmpty){
             textField.text = "ERROR"
-            textField.backgroundColor = UIColor.redColor()
+            textField.backgroundColor = white
         }
         //if there are less than three characters inputed then display the error messege
         if(text.characters.count<3) {
             textField.text = "ERROR"
-            textField.backgroundColor = UIColor.redColor()
+            textField.backgroundColor = white
         }
         else{
             //make an array where each charecter inputed is its own element
@@ -171,7 +195,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //if the first charecter is not either o or d or t or the second charecter is not : then display the error messege
             if (!((firstCharValue == "d" || firstCharValue == "o" || firstCharValue == "t" ) && (secondCharValue  == ":"))){
                 textField.text = "ERROR"
-                textField.backgroundColor = UIColor.redColor()
+                textField.backgroundColor = white
             }
             //check that each character is a number and not a letter or symbol
             //change each charecter to its ascii value and make sure its within the correct range
@@ -199,9 +223,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         //convert the decimal number to Ternary and then to a string
                         let output = String(decimalToTernary(number, numOfDigits : numOfDigits))
                         //output the string
-                        textField.text = output
+                        textField.text = "t:" + output
                     }
-                        //if the user entered an octal number to be converted to decimal
+                        //if the user entered an octal number to be converted to ternary
                     else if(firstCharValue == "o"){
                         //convert the octal nubmer to decimal
                         let decimalNum = octalToDecimal(number)
@@ -209,12 +233,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         let decimalArray = [Int](arrayLiteral: decimalNum)
                         //convert the decimal number to ternary then to a tring and output that
                         let output = String(decimalToTernary(decimalNum, numOfDigits: decimalArray.count))
-                        textField.text = output
+                        textField.text = "t:" + output
                     }
                         //the user endered a ternary number and wants a ternary number
                     else if (firstCharValue == "t"){
                         //output the nubmer given
-                        textField.text = String(number)
+                        textField.text = "t:" + String(number)
                     }
                     //set the text feild back to white
                     textField.backgroundColor = UIColor.whiteColor()
@@ -223,7 +247,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //otherwise some sort of error
             if (runMe) {
                 textField.text = "ERROR"
-                textField.backgroundColor = UIColor.redColor()
+                textField.backgroundColor = white
             }
         }
     }
@@ -231,26 +255,29 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
 
     @IBAction func octalButtonClicked(sender : AnyObject) {
+         
+        /*
         //if the octal button is clicked
         //check if the other buttons are green
         //if they are, change them back to red
         if (decimalButton.backgroundColor == UIColor.greenColor() || ternaryButton.backgroundColor == UIColor.greenColor()){
-            decimalButton.backgroundColor = UIColor.redColor()
-            ternaryButton.backgroundColor = UIColor.redColor()
+            decimalButton.backgroundColor = white
+            ternaryButton.backgroundColor = white
         }
         //change this button to green
         octalButton.backgroundColor = UIColor.greenColor()
+        */
         //get the inputed text as a string
         let text = String(textField.text!)
         //check if the text is empty, if it is then display the error messege
         if (text.isEmpty){
             textField.text = "ERROR"
-            textField.backgroundColor = UIColor.redColor()
+            textField.backgroundColor = white
         }
-        //if the text has less than three characters then it is invalif and display the error messege
+        //if the text has less than three characters then it is invalid and display the error messege
         if(text.characters.count<3) {
             textField.text = "ERROR"
-            textField.backgroundColor = UIColor.redColor()
+            textField.backgroundColor = white
         }
         //otherwise there are itleast three charecters in the text
         else {
@@ -263,7 +290,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //if the first charecter is not either o or d or t or the second charecter is not : then display the error messege
             if (!((firstCharValue == "d" || firstCharValue == "o" || firstCharValue == "t" ) && (secondCharValue  == ":"))){
                 textField.text = "ERROR"
-                textField.backgroundColor = UIColor.redColor()
+                textField.backgroundColor = white
             }
             //check that each character is a number and not a letter or symbol
             //change each charecter to its ascii value and make sure its within the correct range
@@ -291,12 +318,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         //convert the decimal number to octal and then to a string
                         let output = String(decimalToOctal(number, numOfDigits : numOfDigits))
                         //output the string
-                        textField.text = output
+                        textField.text = "o:" + output
                     }
                     //if the user entered an octal number to be converted to octal
                     else if(firstCharValue == "o"){
                         //output the inputed number
-                        textField.text = String(number)
+                        textField.text = "o:" + String(number)
                     }
                     //the user endered a ternary number and wants a octal number
                     else if (firstCharValue == "t"){
@@ -307,7 +334,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                         //convert the decimal number (array) to octal and then to a string
                         let output = String(decimalToOctal(decimalNum, numOfDigits: decimalArray.count))
                         //output the string
-                        textField.text = output
+                        textField.text = "o:" + output
                     }
                     //set the text feild back to white in case it turned red
                     textField.backgroundColor = UIColor.whiteColor()
@@ -316,7 +343,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //some other invalid senario, display the error messege
             if (runMe) {
                 textField.text = "ERROR"
-                textField.backgroundColor = UIColor.redColor()
+                textField.backgroundColor = white
             }
         }
     }
