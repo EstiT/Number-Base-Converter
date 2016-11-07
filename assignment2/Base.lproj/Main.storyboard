@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,21 +18,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iM4-Gi-RgO">
-                                <rect key="frame" x="103" y="218" width="109" height="43"/>
+                                <rect key="frame" x="86" y="210" width="143" height="43"/>
                                 <state key="normal" title="Octal"/>
                                 <connections>
                                     <action selector="octalButtonClicked:" destination="BYZ-38-t0r" eventType="touchDown" id="7o5-et-7KO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1y-15-J9b">
-                                <rect key="frame" x="103" y="167" width="109" height="43"/>
+                                <rect key="frame" x="86" y="154" width="143" height="43"/>
                                 <state key="normal" title="Ternary"/>
                                 <connections>
                                     <action selector="ternaryButtonClicked:" destination="BYZ-38-t0r" eventType="touchDown" id="XZE-V9-0R4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGU-k1-oAm">
+                                <rect key="frame" x="86" y="101" width="143" height="40"/>
+                                <state key="normal" title="Binary"/>
+                                <connections>
+                                    <action selector="binaryButtonClicked:" destination="BYZ-38-t0r" eventType="touchDown" id="6pW-gH-75B"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyp-jZ-Od5">
+                                <rect key="frame" x="86" y="265.5" width="143" height="41.5"/>
+                                <state key="normal" title="Decimal"/>
+                                <connections>
+                                    <action selector="decimalButtonClicked:" destination="BYZ-38-t0r" eventType="touchDown" id="hSe-UQ-Z12"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bDs-in-nxw">
-                                <rect key="frame" x="27" y="67" width="261" height="30"/>
+                                <rect key="frame" x="22" y="53" width="271" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -40,20 +54,6 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="fey-RO-Vuk"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGU-k1-oAm">
-                                <rect key="frame" x="103" y="119" width="109" height="40"/>
-                                <state key="normal" title="Binary"/>
-                                <connections>
-                                    <action selector="binaryButtonClicked:" destination="BYZ-38-t0r" eventType="touchDown" id="6pW-gH-75B"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyp-jZ-Od5">
-                                <rect key="frame" x="103" y="269" width="109" height="41.5"/>
-                                <state key="normal" title="Decimal"/>
-                                <connections>
-                                    <action selector="decimalButtonClicked:" destination="BYZ-38-t0r" eventType="touchDown" id="hSe-UQ-Z12"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
