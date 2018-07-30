@@ -1,4 +1,7 @@
 # Number-Base-Converter
+Converts numbers into different bases
+
+## How to use: 
 
 In the text field, use either o, t, or d (for octal, ternary, and decimal) to specify what number base the inputed number is in.
 A colon follows the single letter and then the number to be converted.
